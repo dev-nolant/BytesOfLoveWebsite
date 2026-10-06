@@ -1,8 +1,9 @@
 .download-page-container {
     position: relative;
-    background-color: rgba(252,236,168,255);
+    background-color: #FEF7D8;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     min-height: 100vh;
 }
 
@@ -31,15 +32,114 @@
 }
 
 .download-button-color {
-    background-color: rgba(156,71,150,255);
+    background-color: #FEF7D8;
 }
 
-#downloadButton {
+.download-page-container #downloadButton {
+    height: auto;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 12px 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
+.download-page-container #downloadButton:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.04);
+    background-color: #9C4796;
+}
+
+.download-page-container #downloadButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.download-page-container #downloadButton a {
+    text-decoration: none;
+    color: #fffeff;
+    font-size: 20px;
+    font-family: cursive;
+}
+
 .os-type {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.download-page-container #heroImage {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: 50% 94%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.download-page-container #downloadCol {
+    max-width: 900px;
+    margin: 70px auto 50px;
+}
+
+.download-page-container #downloadLabel {
+    font-size: 2.2em;
+}
+
+.install-section {
+    background: #D184D7;
+    color: white;
+    border-radius: 60px;
+    width: calc(100% - 60px);
+    max-width: 860px;
+    margin: 0 auto 80px;
+    padding: 50px;
+}
+
+.install-title {
+    font-family: cursive;
+    font-size: 3em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.install-steps {
+    list-style: decimal;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 1.5em;
+    font-size: 1.25em;
+    line-height: 1.8;
+}
+.install-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 25px;
+}
+
+.install-tab {
+    padding: 8px 22px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.install-tab:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.install-tab.active {
+    background-color: white;
+    color: #9C4796;
+}
+
+@media (max-width: 767px) {
+    #downloadCol {
+        columns: 1;
+    }
+
+    .column {
+        margin-bottom: 20px;
+    }
 }
